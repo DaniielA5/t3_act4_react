@@ -21,6 +21,12 @@
     font-size: 1.2em;
     border-bottom: 1px solid #333;
 }
+.notaContenido {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 
 .completada {
     text-decoration: line-through;

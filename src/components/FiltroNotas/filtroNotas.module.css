@@ -1,0 +1,28 @@
+.filtroContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contador {
+    opacity: 0.8;
+}
+
+.botones {
+    display: flex;
+    gap: 8px;
+}
+
+.botones button {
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.botones .activo {
+    background-color: orange;
+    color: #222;
+    font-weight: bold;
+}
