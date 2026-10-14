@@ -22,7 +22,7 @@
 }
 
 .botones .activo {
-    background-color: orange;
-    color: #222;
+    background-color: var(--color-acento);
+    color: var(--color-sobre-acento);
     font-weight: bold;
 }

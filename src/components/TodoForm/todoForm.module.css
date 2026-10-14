@@ -20,8 +20,18 @@
     min-width: 200px;
     font-size: 1.1em;
     padding: 10px;
-    border: 1px solid #444;
+    border: 1px solid var(--color-borde);
     border-radius: 6px;
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+}
+
+.input::placeholder {
+    color: var(--color-texto-suave);
+}
+
+.input:focus {
+    outline: 2px solid var(--color-acento);
 }
 
 .boton {
@@ -30,4 +40,7 @@
     gap: 8px;
     padding: 10px 14px;
     border-radius: 6px;
+    background-color: var(--color-acento);
+    color: var(--color-sobre-acento);
+    font-weight: bold;
 }
