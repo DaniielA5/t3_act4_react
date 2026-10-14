@@ -1,16 +1,11 @@
-import TodoApp from "./components/TodoApp"; 
-import './index.css'
+import TodoApp from "./components/TodoApp";
 
-// pasar Props de padre a hijo 
-//  App -> TodoApp 
-
-
-function App() { 
- 
+// Componente funcional simple: solo envuelve a TodoApp en un contenedor
+function App() {
   return (
-    <section className= "containerTodoApp">
-    <TodoApp />
-     </section>
+    <section className="containerTodoApp">
+      <TodoApp />
+    </section>
   );
 }
 

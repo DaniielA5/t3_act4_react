@@ -1,53 +1,43 @@
-import styles from "./todoForm.module.css"
-import { ClipboardPlus } from "lucide-react"
-import { useState } from "react"
+import { useState } from "react";
+import { ClipboardPlus } from "lucide-react";
+import styles from "./todoForm.module.css";
 
-const TodoForm = ({ onAgregarNota}) => {
-    const [textNote, setTextNote] =  useState("")
+const TodoForm = ({ onAgregarNota }) => {
+    const [textNote, setTextNote] = useState("");
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
-
-        if(textNote === "") {
-            console.log("No se puede aagregar notas vacias")
-
-        const newNote= {
-            text: textNote,
-            completed : false
+        const texto = textNote.trim();
+        if (texto === "") {
+            console.log("No se pueden agregar notas vacías");
+            return;
         }
 
-        fetch("http://localhost:3000/notas", {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(newNote)
-        })
-        .then(ewaponse => Response.json())
-        .then(data => {
-            onAgregarNota(data)
-            setTextNote("")
-        })
-    }
+        onAgregarNota(texto);
+        setTextNote("");
+    };
 
-    return(
-        <div className={styles.fromContainer}> 
-            <h2> Todo Form</h2>
-            <form onSubmit={handleSubmit}>
+    return (
+        <div className={styles.formContainer}>
+            <h2 className={styles.subtitulo}>Nueva nota</h2>
+            <form onSubmit={handleSubmit} className={styles.form}>
                 <input
                     type="text"
                     id="nota"
                     name="nota"
+                    placeholder="Escribe una nota..."
                     value={textNote}
                     onChange={(event) => setTextNote(event.target.value)}
-                    />
-                    <button type="submit">
-                        <ClipboardPlus size={16} />
-                        Crear nota
-                    </button>
+                    className={styles.input}
+                />
+                <button type="submit" className={styles.boton}>
+                    <ClipboardPlus size={16} />
+                    Crear nota
+                </button>
             </form>
         </div>
-    )
-}
-}
+    );
+};
+
+export default TodoForm;
